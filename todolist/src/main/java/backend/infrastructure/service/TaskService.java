@@ -59,13 +59,13 @@ public class TaskService {
 
     }
 
-    public List<TaskResponseDto> findTaskByDone( Status status) {
+    public List<TaskResponseDto> findTaskByStatus( Status status) {
 
-        if( status == null || !repository.existsTaskByDone(status) ) {
+        if( status == null || !repository.existsTaskByStatus(status) ) {
             throw new RuntimeException( "Task not found by Status!" );
         }
 
-        return mapper.toListTaskResponseDto( repository.findTaskByDone(status) );
+        return mapper.toListTaskResponseDto( repository.findTaskByStatus(status) );
 
     }
 

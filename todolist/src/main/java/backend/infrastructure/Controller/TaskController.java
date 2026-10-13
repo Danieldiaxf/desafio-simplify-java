@@ -39,15 +39,15 @@ public class TaskController {
         return taskService.findTaskByPriority( priority );
     }
 
-    @GetMapping("done/{status}")
+    @GetMapping("status/{status}")
     @ResponseStatus( HttpStatus.ACCEPTED )
-    public List<TaskResponseDto> findByDone( @PathVariable Status status) {
-        return taskService.findTaskByDone(status);
+    public List<TaskResponseDto> findByStatus( @PathVariable Status status) {
+        return taskService.findTaskByStatus(status);
     }
 
     @GetMapping("name/{name}")
     @ResponseStatus( HttpStatus.ACCEPTED )
-    public List<TaskResponseDto> findByDone( @PathVariable String name ) {
+    public Optional<TaskResponseDto> findTaskByName( @PathVariable String name ) {
         return taskService.findTaskByName( name );
     }
 

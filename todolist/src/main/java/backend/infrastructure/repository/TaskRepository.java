@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
-    public List<Task> findTaskByDone( Status status);
+    public List<Task> findTaskByStatus( Status status );
 
     public List<Task> findByPriority( Priority priority );
 
@@ -22,5 +22,5 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     public Boolean existsTaskByPriority( Priority priority );
 
-    public Boolean existsTaskByDone( Status status);
+    public Boolean existsTaskByStatus( Status status);
 }
